@@ -1,0 +1,33 @@
+en:
+  Greeting: "Welcome to Calculator! Enter your name:"
+  GreetingValidation: "Make sure to use a valid name"
+  GreetingPersonal: "Hi %{name}!"
+  FirstNum: "What's the first number?"
+  SecondNum: "What's the second number?"
+  InvalidNum: "That doesn't look like a valid number."
+  OperatorPrompt:     What operation would you like to perform?
+      1) add
+      2) subtract
+      3) multiply
+      4) divide
+  OperatorInvalid: "Must choose 1, 2, 3, or 4."
+  Result: "The result is %{result}."
+  Again?: "Do you want to perform another calculation? (Y to calculate again)"
+  Exiting: "Thank you for using the calculator. Goodbye."
+
+es:
+  Greeting: "Bienvenidos a la calculadora! ¿Cómo te llamas?"
+  GreetingValidation: "Use un nombre válido."
+  GreetingPersonal: "Hola %{name}!"
+  FirstNum: "¿Qual es el numero primero?"
+  SecondNum: "¿Qual es el numero segundo?"
+  InvalidNum: "No parece un numero válido."
+  OperatorPrompt:     What operation would you like to perform?
+      1) add
+      2) subtract
+      3) multiply
+      4) divide
+  OperatorInvalid: "Must choose 1, 2, 3, or 4."
+  Result: "The result is %{result}."
+  Again?: "Do you want to perform another calculation? (Y to calculate again)"
+  Exiting: "Thank you for using the calculator. Goodbye."
