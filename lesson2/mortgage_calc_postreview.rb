@@ -54,27 +54,25 @@ def convert_apr_to_monthly(apr)
   (apr / 100) / 12
 end
 
-def calculate_monthly_nointerest(loan, duration)
-  monthly_payment = loan / duration
-  prompt("Your monthly payment is $#{format('%.2f', monthly_payment)}.")
-end
-
 def calculate_monthly_pr(loan, duration, interest)
-  monthly_interest = convert_apr_to_monthly(interest)
-  monthly_payment = loan *
-  (monthly_interest / (1 - (1 + monthly_interest)**(-duration)))
+  if interest == 0.0
+    monthly_payment = loan / duration
+  else
+    monthly_interest = convert_apr_to_monthly(interest)
+    monthly_payment = loan *
+    (monthly_interest / (1 - (1 + monthly_interest)**(-duration)))
+  end
   prompt("Your monthly payment is $#{format('%.2f', monthly_payment)}.")
 end
 
-def again?
-  response = nil
+def calculate_again?
   loop do
     prompt("Do you want to calculate another interest rate? Y to continue; N to end.")
     response = gets.chomp.downcase
-    break if response == 'y' || response == 'n'
+    break true if response == 'y'
+    break false if response == 'n'
     prompt("Please choose Y or N.")
   end
-  response
 end
 
 prompt("Welcome to the mortgage calculator!")
@@ -83,12 +81,8 @@ loop do
   loan_amount = retrieve_loan_amount
   interest_rate = retrieve_interest_rate
   loan_duration = retrieve_loan_duration
-  if interest_rate == 0.0
-    calculate_monthly_nointerest(loan_amount, loan_duration)
-  else
-    calculate_monthly_pr(loan_amount, loan_duration, interest_rate)
-  end
-  break if again?() == 'n'
+  calculate_monthly_pr(loan_amount, loan_duration, interest_rate)
+  break unless calculate_again?
 end
 
 prompt("Thank you for using the mortgage calculator. Goodbye!")
