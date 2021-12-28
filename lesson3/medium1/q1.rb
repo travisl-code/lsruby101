@@ -1,0 +1,1 @@
+10.times.each {|x| puts "#{' ' * x}The Flintstones Rock!"}
