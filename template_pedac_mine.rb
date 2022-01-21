@@ -16,6 +16,15 @@ Understand the Problem
     2. 
     3. 
 
+  Mental Model:
+    - 
+
+
+Examples
+--------
+
+  Edge Cases:
+  
 
 Data Structure
 --------------
